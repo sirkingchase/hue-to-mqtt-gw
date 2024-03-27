@@ -69,7 +69,8 @@ describe("PUT handler", () => {
     test("Turn on", async () => {
         const msg: LightMessage = {
             state: "ON",
-            brightness: 50
+            brightness: 50,
+            "last-updated": new Date().toISOString()
         }
 
         await putMessage(deviceStubs.lightWithColor, Buffer.from(JSON.stringify(msg)))
@@ -96,7 +97,8 @@ describe("PUT handler", () => {
     test("Turn off", async () => {
         const msg: LightMessage = {
             state: "OFF",
-            brightness: 50
+            brightness: 50,
+            "last-updated": new Date().toISOString()
         }
 
         await putMessage(deviceStubs.lightWithColor, Buffer.from(JSON.stringify(msg)))
@@ -124,7 +126,8 @@ describe("PUT handler", () => {
         const msg: LightMessage = {
             state: "OFF",
             brightness: 100,
-            color_temp: 250
+            color_temp: 250,
+            "last-updated": new Date().toISOString()
         }
 
         await putMessage(deviceStubs.lightWithColor, Buffer.from(JSON.stringify(msg)))

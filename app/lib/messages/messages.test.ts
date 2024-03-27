@@ -30,7 +30,7 @@ describe("Messages", () => {
     describe("lights", () => {
         test("color", async () => {
             const message: any = fromLight(deviceStubs.lightWithColor as Light)
-
+            delete message["last-updated"]
             expect(message)
                 .toStrictEqual({
                     brightness: 100,
@@ -73,7 +73,8 @@ describe("Messages", () => {
                     x: 0.1,
                     y: 0.2
                 },
-                state: "ON"
+                state: "ON",
+                "last-updated": new Date().toISOString()
             }
             expect(isEffectMessage(message)).toBeFalsy()
 
@@ -88,7 +89,8 @@ describe("Messages", () => {
             const message: LightMessage = {
                 brightness: 100,
                 color_temp: 200,
-                state: "OFF"
+                state: "OFF",
+                "last-updated": new Date().toISOString()
             }
             expect(isEffectMessage(message)).toBeFalsy()
 
