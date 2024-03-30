@@ -2,7 +2,7 @@
 
 [![mqtt-smarthome](https://img.shields.io/badge/mqtt-smarthome-blue.svg)](https://github.com/mqtt-smarthome/mqtt-smarthome)
 
-Convert Philips Hue messages to mqtt messages.
+Convert Philips Hue messages to mqtt messages. This fork adds last-updated to the lights for MQTT v3 persistance.
 
 # Why another hue-mqtt-bridge?
 
